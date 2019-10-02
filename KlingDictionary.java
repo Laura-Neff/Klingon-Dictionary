@@ -179,6 +179,24 @@ public class KlingDictionary {
     KlingDictionary newDict = new KlingDictionary();
     //TODO: fill in code for this method
     // ... //
+
+
+      Iterator<KlingWord> iterator = dict.iterator();
+
+
+      while (iterator.hasNext()) {
+          KlingWord i = iterator.next(); //i is equal to the first element of our arraylist
+          if (i.getKN().charAt(0) == (i.getKN().charAt(i.getKN().length() - 1))) {
+              newDict.addWord(i);
+
+
+          }
+
+
+
+      }
+
+
     return newDict;
   }
 
