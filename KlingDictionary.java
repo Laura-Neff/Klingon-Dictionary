@@ -147,7 +147,23 @@ public class KlingDictionary {
   /* that is longer than 3 characters (regardless of the English translation's length) */
   public void shortDict(){
     int limit = 3;
+
     //TODO: fill in code for this method
+
+      Iterator<KlingWord> iterator = dict.iterator();
+
+
+      while (iterator.hasNext()) {
+          KlingWord i = iterator.next(); //i is equal to the first element of our arraylist
+          if (i.getKN().length() > 3) {
+              iterator.remove();
+
+
+          }
+
+
+
+      }
     // ... //
   }
 
