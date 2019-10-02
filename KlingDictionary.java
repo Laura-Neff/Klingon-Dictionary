@@ -84,7 +84,7 @@ public class KlingDictionary {
 //
 
       Iterator<KlingWord> iterator = dict.iterator();
-      int temp2 = 0;
+      int temp = 0;
       int indexCopy = 0;
 
 
@@ -95,11 +95,11 @@ public class KlingDictionary {
                 iterator.remove();
 
             } if(dict.contains(oldWord)) {
-                temp2 = -1;
+                temp = -1;
             }
         }
 
-        if(temp2 == 0){
+        if(temp == 0){
           dict.add(indexCopy, newWord);
           return 0;
         } else {
@@ -119,12 +119,28 @@ public class KlingDictionary {
   * in "badEN" from the dictionary "dict".
   *
   * Return the number of words that were deleted successfully. */
-  public int deleteFromDict(String badEN){
-    //TODO: fill in code for this method
-    // ... //
-    return -1; //temporarily
-  }
+  public int deleteFromDict(String badEN) {
+      //TODO: fill in code for this method
 
+      Iterator<KlingWord> iterator = dict.iterator();
+      int count = 0;
+
+
+      while (iterator.hasNext()) {
+          KlingWord i = iterator.next(); //i is equal to the first element of our arraylist
+          if (i.getEN().equals(badEN)) {
+              iterator.remove();
+              count += 1;
+
+          }
+
+
+
+      }
+
+      return count;
+
+  }
 
   /* The new Klingon leader decided that long words are just stupid.
   /* Implement this law which removes any Klington word from the dictionary
